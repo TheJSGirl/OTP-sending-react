@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import './style.css';
 
 class ContactList extends Component {
   constructor() {
@@ -9,32 +9,31 @@ class ContactList extends Component {
 
   renderRow(data, index) {
     return (
-      <tr>
-        <hr />
+      <tr key={index}>
         <td>{index}</td>
         <td>{data.name}</td>
         <td>{data.mobile}</td>
+        <td>
+          <button>send</button>
+        </td>
+        <td>
+          <button>history</button>
+        </td>
       </tr>
     );
   }
   render() {
-    console.log('propssss', this.props);
     const { contacts } = this.props;
-    console.log('contacts-----', contacts);
     return (
-      <div style={{ padding: '5em', float: 'left' }}>
-        <table>
+      <div style={{ float: 'left', marginBottom: '70px' }}>
+        <table id="contacts">
           <thead>
             <tr>
-              <th style={{ color: 'blue' }}>
-                <span>Id</span>
-              </th>
-              <th style={{ color: 'blue' }}>
-                <span>Name</span>
-              </th>
-              <th style={{ color: 'blue' }}>
-                <span>Mobile</span>
-              </th>
+              <th>S.No.</th>
+              <th>Name</th>
+              <th>Mobile</th>
+              <th>OTP</th>
+              <th>History</th>
             </tr>
           </thead>
 

@@ -14,7 +14,6 @@ class App extends Component {
     axios
       .get('http://localhost:4000/api/contacts')
       .then(response => {
-        console.log('------', response.data.data);
         this.setState({
           contacts: response.data.data
         });
@@ -24,15 +23,14 @@ class App extends Component {
       });
   }
   render() {
-    console.log('contactsss283e', this.state.contacts);
     return (
       <div className="App">
         <header className="App-header">
           <h1
             style={{
               textAlign: 'center',
-              color: '#3470d1',
-              fontSize: '3em'
+              fontSize: '3em',
+              marginBottom: '3em'
             }}
           >
             Your Contacts
